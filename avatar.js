@@ -6,12 +6,14 @@
  */
 
 if ( jQuery && $('a[href="/UserDetails.aspx"]' , '#boxUser').length )
-	$(function() {
+	$(function()
+	{
 		$.get(
 			'/UserDetails.aspx' ,
 			{} ,
-			function(o) {
-				$('a[href="/UserDetails.aspx"]','#boxUser ')
+			function(o)
+			{
+				$('a[href="/UserDetails.aspx"]' , '#boxUser ')
 					.eq(0)
 					.before(
 						$('<a/>')
@@ -19,11 +21,11 @@ if ( jQuery && $('a[href="/UserDetails.aspx"]' , '#boxUser').length )
 							.append(
 								$('<img/>')
 									.css({
-										display : 'none' ,
-										margin : '3px 0 10px 0' ,
-										border : '1px solid lime' ,
+										display         : 'none' ,
+										margin          : '3px 0 10px 0' ,
+										border          : '1px solid lime' ,
 										'border-radius' : '5px' ,
-										padding : '0.1em'})
+										padding         : '0.1em'})
 									.attr({
 										src : $(o)
 											.find('#enUserDetailsPanel_lnkAvatarEdit img')
@@ -32,5 +34,6 @@ if ( jQuery && $('a[href="/UserDetails.aspx"]' , '#boxUser').length )
 									.fadeIn(100)
 							)
 					);
-			});
+			}
+		);
 	});
